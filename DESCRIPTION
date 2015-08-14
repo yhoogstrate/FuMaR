@@ -1,0 +1,7 @@
+Package: FuMaR
+Type: Package
+Title: FusionMatcher (R wrapper)
+Version: 1.0
+Date: 2015-08-14
+Authors: Youri Hoogstrate
+Description: Match fusion genes detected in RNA-Seq
