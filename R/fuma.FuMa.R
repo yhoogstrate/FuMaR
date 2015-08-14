@@ -11,7 +11,7 @@ function(object,gene_list_bed_file)
   
   output <- tempfile()
   
-  cmd <- "fuma"
+  cmd <- object$binary
   cmd <- paste(cmd," -f 'list'",sep="")
   
   if(object$egm == TRUE) {
