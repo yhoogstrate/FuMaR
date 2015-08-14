@@ -3,5 +3,7 @@ Type: Package
 Title: FusionMatcher (R wrapper)
 Version: 1.0
 Date: 2015-08-14
-Authors: Youri Hoogstrate
+Author: Youri Hoogstrate
+Maintainer: Youri Hoogstrate <y.hoogstrate@localhost>
 Description: Match fusion genes detected in RNA-Seq
+License: GPL-3
