@@ -1,3 +1,5 @@
+
+#' Finds the version of FuMa
 find_version.FuMa <-
 function(object) {
   output <- tempfile()
