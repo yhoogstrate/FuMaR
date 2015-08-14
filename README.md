@@ -1,11 +1,14 @@
 Installation
 ------------
 
-Run from this directory:
+To install FuMaR, run the following commands:
 
-R CMD build .
-R CMD INSTALL .
+	git clone https://github.com/yhoogstrate/FuMaR.git
+	cd FuMaR
+	R CMD build .
+	R CMD INSTALL .
 
-R
-> library(FuMaR)
-> ?FuMa
+Then, start R and proceed with:
+
+	> library(FuMaR)
+	> ?FuMa
