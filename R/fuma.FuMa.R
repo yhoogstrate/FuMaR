@@ -13,7 +13,7 @@ function(object,gene_list_bed_file)
   
   cmd <- object$binary
   cmd <- paste(cmd," -f 'list'",sep="")
-  cmd <- paste(cmd,"-m",matching,sep=" ")
+  cmd <- paste(cmd,"-m",object$matching,sep=" ")
   
   if(object$strand_specific_matching == TRUE) {
     cmd <- paste(cmd," --strand-specific-matching",sep="")
@@ -43,6 +43,6 @@ function(object,gene_list_bed_file)
   print("Parsing output")
   
   # Convert output to a list of fSet's
-  output <- read.delim(output,header=T,stringsAsFactors=F,row.names=1,check.names=FALSE,na.strings=c(""))
+  output <- read.delim(output,header=T,stringsAsFactors=F,row.names=NULL,check.names=FALSE,na.strings=c(""))
   return(output)
 }
