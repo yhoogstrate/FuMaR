@@ -11,7 +11,7 @@ function(binary="fuma",matching="subset",strand_specific_matching=TRUE,acceptor_
     dataset_exported_files=c()
   )
   
-  if(is.NA(match(matching,c("subset","overlap","egm"))) {
+  if(is.NA(match(matching,c("subset","overlap","egm")))) {
     stop("Invalid matching method was chosen.")
   }
   
