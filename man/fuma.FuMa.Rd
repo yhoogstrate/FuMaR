@@ -2,7 +2,7 @@
 \alias{fuma.FuMa}
 %- Also NEED an '\alias' for EACH other topic documented here.
 \title{
-run fuma
+%%  ~~function to do ... ~~
 }
 \description{
 %%  ~~ A concise (1-5 lines) description of what the function does. ~~
@@ -58,13 +58,22 @@ function (object, gene_list_bed_file)
     }
     print("Running FuMa")
     output <- tempfile()
-    cmd <- "fuma"
+    cmd <- object$binary
     cmd <- paste(cmd, " -f 'list'", sep = "")
-    if (object$egm == TRUE) {
-        cmd <- paste(cmd, " --egm", sep = "")
-    }
+    cmd <- paste(cmd, "-m", object$matching, sep = " ")
     if (object$strand_specific_matching == TRUE) {
         cmd <- paste(cmd, " --strand-specific-matching", sep = "")
+    }
+    else {
+        cmd <- paste(cmd, " --no-strand-specific-matching", sep = "")
+    }
+    if (object$acceptor_donor_order_specific_matching == TRUE) {
+        cmd <- paste(cmd, " --acceptor-donor-order-specific-matching", 
+            sep = "")
+    }
+    else {
+        cmd <- paste(cmd, " --no-acceptor-donor-order-specific-matching", 
+            sep = "")
     }
     cmd <- paste(cmd, " -a 'genes:", gene_list_bed_file, "'", 
         sep = "")
@@ -86,7 +95,7 @@ function (object, gene_list_bed_file)
     system(cmd)
     print("Parsing output")
     output <- read.delim(output, header = T, stringsAsFactors = F, 
-        row.names = 1, check.names = FALSE, na.strings = c(""))
+        row.names = NULL, check.names = FALSE, na.strings = c(""))
     return(output)
   }
 }

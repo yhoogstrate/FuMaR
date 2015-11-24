@@ -18,8 +18,15 @@ function(object,gene_list_bed_file)
   if(object$strand_specific_matching == TRUE) {
     cmd <- paste(cmd," --strand-specific-matching",sep="")
   }
+  else {
+    cmd <- paste(cmd," --no-strand-specific-matching",sep="")
+  }
+  
   if(object$acceptor_donor_order_specific_matching == TRUE) {
     cmd <- paste(cmd," --acceptor-donor-order-specific-matching",sep="")
+  }
+  else {
+      cmd <- paste(cmd," --no-acceptor-donor-order-specific-matching",sep="")
   }
   
   cmd <- paste(cmd," -a 'genes:",gene_list_bed_file,"'",sep="")
